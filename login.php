@@ -205,7 +205,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     .form-control-label {
         font-size: 10px;
-        color: #6c6c6c;
+        color: white;
         font-weight: bold;
         letter-spacing: 1px;
     }
@@ -247,6 +247,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     .redirect-page {
         color: white;
     }
+
+    .help-block {
+        color: red;
+    }
     </style>
 </head>
 
@@ -257,8 +261,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="row">
             <div class="col-lg-3 col-md-2"></div>
             <div class="col-lg-6 col-md-8 login-box">
-                <div class="col-lg-12 login-key">
-                    <i class="fa fa-key" aria-hidden="true"></i>
+
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png" alt="#" style="width: 150px;" /></a>
                 </div>
                 <div class="col-lg-12 login-title">
                     Sign In
@@ -269,7 +274,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>' method='post'>
 
                             <div class="form-group" <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                                <label class="form-control-label">USERNAME</label>
+                                <label class="form-control-label">EMAIL OR PHONE NUMBER</label>
                                 <input type="text" class="form-control" name="username" class="form-control"
                                     value="<?php echo $username; ?>">
                                 <span class="help-block"><?php echo $username_err; ?></span>
@@ -289,7 +294,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <button type="submit" class="btn btn-outline-primary">LOGIN</button>
                                 </div>
                             </div>
-                            <p class="redirect-page">Don't have an account? <a href="register.php">Sign up now</a>.</p>
+                            <p class="redirect-page">Don't have an account? <a href="register.php">Sign up now</a></p>
+                            <p class="redirect-page">Reset Your Password <a href="reset-password.php">Click here..</a>
+                            </p>
                         </form>
                     </div>
                 </div>
